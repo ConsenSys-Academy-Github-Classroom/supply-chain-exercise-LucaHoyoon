@@ -56,7 +56,7 @@ event LogReceived (uint sku);
     _;
     uint _price = items[_sku].price;
     uint amountToRefund = msg.value - _price;
-    require(amountToRefund > 0);
+    require(amountToRefund >=0);
     items[_sku].buyer.transfer(amountToRefund);
     // uint _price = items[_sku].price;
     // uint amountToRefund = msg.value - _price;
